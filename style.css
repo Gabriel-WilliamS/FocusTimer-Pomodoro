@@ -1,0 +1,157 @@
+:root {
+  --bg-color: #121214;
+  --text-color: #ffffff;
+
+  --base-color: 192;
+  --bg-primary-light: hsla(var(--base-color), 100%, 63%, 0.13);
+  --primary-color: hsl(var(--base-color), 100%, 63%);
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  display: grid;
+  min-height: 100vh;
+}
+
+main {
+  justify-self: center;
+  align-self: end;
+}
+
+#timer {
+  font-size: clamp(2rem, 3rem + 15vw, 8.8rem);
+  display: flex;
+
+  margin-bottom: 1.6rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.play svg path,
+.pause svg path,
+.sound-on svg path {
+  fill: var(--primary-color);
+}
+
+button svg {
+  width: clamp(3.2rem, 2rem + 12vw, 6.4rem);
+}
+
+#controls {
+  background: var(--bg-primary-light);
+  width: clamp(20rem, 10rem + 30vw, 22.8rem);
+  height: clamp(8rem, 5rem + 10vw, 10.8rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999rem;
+  gap: 3.2rem;
+}
+
+footer {
+  align-self: end;
+  justify-self: end;
+  padding: 0 4rem 3rem 0;
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row-reverse;
+}
+
+.slider-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #121214;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 5px 3rem 3rem 5px;
+  height: 5rem;
+}
+
+.slider {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 2rem;
+}
+
+.slider input {
+  position: absolute;
+
+  width: 15rem;
+  height: 1.5rem;
+  -webkit-appearance: none;
+  background-color: transparent;
+  z-index: 99;
+}
+
+.slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  border: 2px solid hsl(var(--base-color), 100%, 63%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider progress {
+  -webkit-appearance: none;
+  width: 15rem;
+  height: 1.5rem;
+  border-radius: 20rem;
+  overflow: hidden;
+}
+
+.slider progress::-webkit-progress-bar {
+  background-color: #f0f0f0;
+}
+
+.slider progress::-webkit-progress-value {
+  background-image: linear-gradient(
+    to right,
+    hsl(192, 64%, 19%),
+    hsl(var(--base-color), 100%, 63%)
+  );
+}
+
+.sliderValue {
+  width: 2.8rem;
+  height: 2rem;
+  margin-left: 1rem;
+  text-align: center;
+  font-size: 1.9rem;
+}
+
+@media (max-width: 337px) {
+  footer {
+    padding: 0 1.5rem 3rem 0;
+  }
+}
